@@ -48,6 +48,5 @@ print(location_predict.test_light(model, prefectures_test_data, camp_test_data, 
 
 predict_values = model.predict([next_prefectures_data, next_camp_data])
 
-
 for pv in predict_values:
   print(pv)
