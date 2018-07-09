@@ -13,12 +13,16 @@ int main(int argc, char** argv)
     return EXIT_FAILURE;
   }
 
-  const auto human_vector_template {[ifs = ifstream{argv[1]}]() mutable {
-    map<string, bool> human_headers {};
-    for (string s; ifs >> s;)
-      human_headers.emplace(s, false);
-    return human_headers;
-  }()};
+  ifs {ifstream{argv[1]}};
+  int i = 0;
+
+  int a = 0;
+  int a[] = {1,2,3,4,5};
+
+  map<string, bool> human_headers {};
+  for (string s; ifs >> s;)
+    human_headers.emplace(s, false);
+  return human_headers;
 
   cout << "year";
   for (const auto& e : human_vector_template)
